@@ -22,12 +22,17 @@ import { Carousel } from "react-responsive-carousel";
 
 // Styles -----------------------------------------------------------------
 import styles from "../assets/jss/material-kit-react/views/landingPage.js";
+import customStyles from "./CustomClasses.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "../assets/css/custom-style.css";
 
-const useStyles = makeStyles(styles);
+const allStyles = {
+  ...styles,
+  ...customStyles
+}
 
+const useStyles = makeStyles(allStyles);
 
 const HomePage = (/*{ children }*/) => {
   const classes = useStyles();
@@ -121,7 +126,7 @@ const HomePage = (/*{ children }*/) => {
                   <br />
                   Aliquam mollis auctor libero.
                 </h5>
-                <Button color="primary">Start</Button>
+                <Button color="primary" size="lg">Start</Button>
               </GridItem>
             </GridContainer>
           </div>
@@ -136,14 +141,20 @@ const HomePage = (/*{ children }*/) => {
                   showThumbs={false}
                   autoPlay={false}
                   infiniteLoop={true}
-                  interval={5000}>
-                  <div style={{height:"100%"}}>
-                    <img style={{objectFit:"cover", margin:"0px", padding:"0px", height:"100%"}} src={require("../assets/img/pope-francis.jpg")} />
-                    <p className="legend">Legend 1</p>
+                  interval={6000}>
+                  <div className={classes.fullHeight}>
+                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/pope-francis.jpg")} />
+                    <div className={classes.overlay}>
+                      <p className={"quoteBody"}>The world tells us to seek success, power and money; God tells us to seek humility, service and love.</p>
+                      <p className={"quoteAuthor"}>Pope Francis</p>
+                    </div>
                   </div>
-                  <div style={{height:"100%"}}>
-                    <img style={{objectFit:"cover", margin:"0px", padding:"0px", height:"100%"}} src={require("../assets/img/john-paul-ii.jpg")} />
-                    <p className="legend">Legend 2</p>
+                  <div className={classes.fullHeight}>
+                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/john-paul-ii.jpg")} />
+                    <div className={classes.overlay}>
+                      <p className={"quoteBody"}>Freedom consists not in doing what we like, but having the right to do what we ought.</p>
+                      <p className={"quoteAuthor"}>Saint John Paul II</p>
+                    </div>
                   </div>
                 </Carousel>
               </GridItem>

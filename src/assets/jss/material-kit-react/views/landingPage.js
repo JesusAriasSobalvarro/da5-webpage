@@ -30,18 +30,7 @@ const landingPageStyle = {
     borderRadius: "6px",
     boxShadow:
       "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
-  },
-  firstSection: {
-    padding: "70px 0 35px 0",
-    textAlign: "center"
-  },
-  section: {
-    padding: "35px 0",
-    textAlign: "center"
-  },
-  grayText: {
-    color: "#3C4858"
-  },
+  }
 };
 
 export default landingPageStyle;
