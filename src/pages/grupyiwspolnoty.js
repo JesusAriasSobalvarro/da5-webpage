@@ -1,8 +1,8 @@
 import React from "react"
-import Duszpasterze from "../layouts/Duszpasterze"
+import GrupyIWspolnoty from "../layouts/GrupyIWspolnoty"
 
 const DuszpasterzePage = () => (
-  <Duszpasterze />
+  <GrupyIWspolnoty />
 )
 
 export default DuszpasterzePage

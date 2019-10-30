@@ -30,6 +30,10 @@ const customClasses = {
         justifyContent: "center",
         alignItems: "center",
         padding: "35px"
+    },
+    normalPageTitleContainer: {
+        padding: "35px 0 0 0",
+        textAlign: "center"
     }
 };
 

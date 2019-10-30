@@ -4,6 +4,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link } from "gatsby";
+import window from 'global'
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -27,7 +28,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="Duszpasterstwa"
@@ -51,23 +52,71 @@ export default function HeaderLinks(props) {
        <Link to="/" className={classes.dropdownLink}>Duszpasterstwa Akademickie w Łodzi</Link>
           ]}
         />
-      </ListItem>
-      {/* <ListItem className={classes.listItem}>
+      </ListItem> */}
+
+      <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+          href="#"
           color="transparent"
           target="_blank"
           className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> Download
+        > Plan
         </Button>
-      </ListItem> */}
+      </ListItem> 
+
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
+        <Button
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > Aktualności
+        </Button>
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
+        <Link to="/grupyiwspolnoty" className={classes.navLink}>Grupy i wspólnoty</Link>
+      </ListItem> 
+
+      <ListItem className={classes.listItem}>
+        <Button
+          href="#"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > Galeria
+        </Button>
+      </ListItem>
+
+      
+      <ListItem className={classes.listItem}>
+        <Button
+          href="#"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > Duszpasterze
+        </Button>
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
+        <Button
+          href="#"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > Sakramenty
+        </Button>
+      </ListItem>
+      
+
+
+
+      {/* <ListItem className={classes.listItem}>
+        <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
           </IconButton>
-        </Tooltip>*/}
+        </Tooltip>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -83,8 +132,8 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fa fa-twitter"} />
           </Button>
         </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
+      </ListItem> */}
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
@@ -100,8 +149,8 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fa fa-facebook-square"} />
           </Button>
         </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
+      </ListItem> */}
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
@@ -117,7 +166,7 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fa fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }

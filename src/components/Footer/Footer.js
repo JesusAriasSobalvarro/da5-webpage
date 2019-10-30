@@ -9,6 +9,10 @@ import classNames from "classnames";
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
+import Favorite from "@material-ui/icons/Favorite";
+
+import Button from "../CustomButtons/Button.js";
+
 // Styles -----------------------------------------------------------------------
 import styles from "../../assets/jss/material-kit-react/components/footerStyle";
 import "../../assets/css/custom-style.css"
@@ -22,28 +26,30 @@ export default function Footer(props) {
     [classes.footer]: true,
     [classes.footerWhiteFont]: whiteFont
   });
-  // const aClasses = classNames({
-  //   [classes.a]: true,
-  //   [classes.footerWhiteFont]: whiteFont
-  // });
+  const aClasses = classNames({
+    [classes.a]: true,
+    [classes.footerWhiteFont]: whiteFont
+  });
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <h4 style={{fontSize:"1rem"}}>© 2013-2018 Duszpasterswo Akademickie "Piątka" w Łodzi, ul. Skorupki 5 | Strona używa plików cookies.</h4>
-            </ListItem>
             {/* <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Creative Tim
+              <h4 style={{fontSize:"1rem"}}>© 2013-2018 Duszpasterswo Akademickie "Piątka" w Łodzi, ul. Skorupki 5 | Strona używa plików cookies.</h4>
+            </ListItem>  */}
+            <ListItem className={classes.inlineBlock}>
+              <span className={classes.block}>Follow Us:</span>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a href="#">
+                <i className={classes.socialIcons + " fa fa-facebook-square"} />
+              </a>
+              <a href="#">
+                <i className={classes.socialIcons + " fa fa-instagram"} />
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            {/* <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/presentation?ref=mkr-footer"
                 className={classes.block}
@@ -72,18 +78,19 @@ export default function Footer(props) {
             </ListItem> */}
           </List>
         </div>
-        {/* <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
+        <div className={classNames(classes.right, classes.footerRightText)}>
+        &copy; 2013-{1900 + new Date().getYear()}{" "}Duszpasterswo Akademickie "Piątka" w Łodzi | 
+        Made with <Favorite className={classNames(classes.icon, classes.primaryColorText)} /> using Creative Tim and GatsbyJS
+          
+          {/* <a
             href="https://www.creative-tim.com?ref=mkr-footer"
             className={aClasses}
             target="_blank"
           >
             Creative Tim
           </a>{" "}
-          for a better web.
-        </div> */}
+          for a better web. */}
+        </div>
       </div>
     </footer>
   );

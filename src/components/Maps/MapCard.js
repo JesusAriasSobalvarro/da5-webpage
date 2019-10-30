@@ -28,30 +28,30 @@ export default function MapCard(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.section} style={{paddingTop: "0px"}}>
+    <div className={classes.section} style={{ paddingTop: "0px" }}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={12}>
           <h2 className={classes.title}>Jak do nas trafić?</h2>
         </GridItem>
       </GridContainer>
+
+      <GridContainer justify="center" >
       
-<GridContainer justify="center" >
-
         <GridItem xs={12} sm={12} md={8}>
-        <Card>
+          <Card>
 
-          <CardBody style={{minHeight:"350px", padding:"0px"}}>
-          <MapContainer></MapContainer>
-          </CardBody>
-        </Card>
+            <CardBody style={{ minHeight: "350px", padding: "0px" }}>
+              <MapContainer></MapContainer>
+            </CardBody>
+          </Card>
 
         </GridItem>
 
-          
-        </GridContainer>
-      
 
-      
+      </GridContainer>
+
+
+
     </div>
   );
 }

@@ -5,12 +5,13 @@ const footerStyle = {
     color: "inherit",
     padding: "0.9375rem",
     fontWeight: "500",
-    fontSize: "12px",
+    fontSize: "14px",
     textTransform: "uppercase",
     borderRadius: "3px",
     textDecoration: "none",
     position: "relative",
-    display: "block"
+    display: "block",
+    fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif;`
   },
   left: {
     float: "left!important",
@@ -47,13 +48,28 @@ const footerStyle = {
   inlineBlock: {
     display: "inline-block",
     padding: "0px",
-    width: "auto"
+    width: "auto",
   },
   icon: {
     width: "18px",
     height: "18px",
     position: "relative",
     top: "3px"
+  },
+  socialIcons: {
+    position: "relative",
+    fontSize: "28px !important",
+    padding: "0.6475rem",
+    color: "#9C27B0"
+  },
+  footerRightText: {
+    fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
+    fontWeight: "300",
+    lineHeight: "1.5em",
+    fontSize: "16px"
+  },
+  primaryColorText: {
+    color: "#9C27B0"
   }
 };
 export default footerStyle;

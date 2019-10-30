@@ -151,11 +151,6 @@ const headerStyle = {
     display: "flex",
     justifyContent: "flex-start"
   },
-  brandLogo: {
-    width: "70px",
-    marginBottom: "0px",
-  },
-
 };
 
 export default headerStyle;

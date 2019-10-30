@@ -93,7 +93,7 @@ const HomePage = (/*{ children }*/) => {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Duszpasterstwo Akademickie Piątka</h1>
+              <h1 className={classNames(classes.title, "main-page-title")}>Duszpasterstwo Akademickie Piątka</h1>
               <h4>
                 Przyjdź, drzwi dla Ciebie są zawsze otwarte!
               </h4>
@@ -135,11 +135,12 @@ const HomePage = (/*{ children }*/) => {
 
           <div className={classes.section}>
             <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={10}>
+              <GridItem xs={12} sm={12} md={12}>
                 <Carousel
+                  className={'carousel'}
                   showStatus={false}
                   showThumbs={false}
-                  autoPlay={false}
+                  autoPlay={true}
                   infiniteLoop={true}
                   interval={6000}>
                   <div className={classes.fullHeight}>
@@ -156,12 +157,52 @@ const HomePage = (/*{ children }*/) => {
                       <p className={"quoteAuthor"}>Saint John Paul II</p>
                     </div>
                   </div>
+                  <div className={classes.fullHeight}>
+                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/maximilian-kolbe.jpg")} />
+                    <div className={classes.overlay}>
+                      <p className={"quoteBody"}>Let us remember that love lives through sacrifice and is nourished by giving. Without sacrifice there is no love.</p>
+                      <p className={"quoteAuthor"}>Sain Maximilian Kolbe</p>
+                    </div>
+                  </div>
                 </Carousel>
               </GridItem>
             </GridContainer>
           </div>
 
+          <div className={classes.section}>
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={12} md={12}>
+                <h2 className={classNames(classes.title, classes.grayText)}>Follow Us</h2>
+                <h5 className={classNames(classes.description, classes.grayText)}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <br />
+                  Aliquam mollis auctor libero.
+                </h5>
+              </GridItem>
+            </GridContainer>
+
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={12} md={6}>
+                <span className="fa-stack fa-4x" style={{cursor: "pointer"}}>
+                  <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
+                  <i className="fa fa-facebook fa-stack-1x"></i>
+                </span>
+                <h5 className={classNames(classes.description, classes.grayText)}>Facebook</h5>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <span className="fa-stack fa-4x" style={{cursor: "pointer"}}>
+                  <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
+                  <i className="fa fa-instagram fa-stack-1x"></i>
+                </span>
+
+                <h5 className={classNames(classes.description, classes.grayText)}>Instagram</h5>
+                
+              </GridItem>
+            </GridContainer>
+          </div>
+
           <MapCard />
+
         </div>
       </div>
 

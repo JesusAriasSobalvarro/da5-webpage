@@ -628,6 +628,16 @@ pre tt:after {
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.5rem;
 }
+.carousel {
+  max-height: 700px;
+  border-radius: 10px;
+}
+.main-page-title {
+  font-size: 2.7rem;
+}
+.main-card-margin {
+  margin-top: 12vh;
+}
 
 @media only screen and (max-width: 480px) {
   html {
@@ -643,6 +653,9 @@ pre tt:after {
   .quoteAuthor {
     font-size: 0.9em;
     line-height: 2rem;
+  }  
+  .main-page-title {
+    font-size: 2.8rem;
   }
 }
 
@@ -655,6 +668,12 @@ pre tt:after {
     font-size: 1.1em;
     line-height: 3rem;
   }
+  .main-page-title {
+    font-size: 3rem;
+  }
+  .main-card-margin {
+    margin-top: 14vh;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -665,5 +684,11 @@ pre tt:after {
   .quoteAuthor {
     font-size: 1.25em;
     line-height: 3rem;
+  }
+  .main-page-title {
+    font-size: 3.3125rem;
+  }
+  .main-card-margin {
+    margin-top: 15vh;
   }
 }
