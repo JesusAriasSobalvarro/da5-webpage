@@ -56,5 +56,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `galeria`,
+        path: `${__dirname}/src/images/galeria`,
+      },
+    },
   ],
 }

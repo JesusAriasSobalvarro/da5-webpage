@@ -67,9 +67,6 @@ const footerStyle = {
     fontWeight: "300",
     lineHeight: "1.5em",
     fontSize: "16px"
-  },
-  primaryColorText: {
-    color: "#9C27B0"
   }
 };
 export default footerStyle;

@@ -34,6 +34,29 @@ const customClasses = {
     normalPageTitleContainer: {
         padding: "35px 0 0 0",
         textAlign: "center"
+    },
+    primaryColorText: {
+        color: "#9C27B0"
+    },
+    spanText: {
+        fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+        fontWeight: "300",
+        fontSize: "0.9rem"
+    },
+    contactContainer: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "0px 0px 0px 0px"
+    },
+    pastPriests: {
+        color: "#3C4858",
+        margin: "1.75rem 0 0.875rem",
+        textDecoration: "none",
+        fontWeight: "500",
+        fontFamily: `"Roboto Slab", "Times New Roman", serif`,
+        marginTop: ".625rem",
+        fontSize: "0.95rem"
     }
 };
 

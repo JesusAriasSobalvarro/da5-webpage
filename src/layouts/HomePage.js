@@ -7,7 +7,7 @@ import classNames from "classnames";
 import React from "react";
 // import PropTypes from "prop-types";
 // import { useStaticQuery, graphql } from "gatsby";
-
+import { facebookUrl, instagramUrl, openWebsite } from "./Common.js";
 // Components used in this layout -----------------------------------------
 import Header from "../components/Header/Header";
 import HeaderLinks from "../components/Header/HeaderLinks";
@@ -183,20 +183,18 @@ const HomePage = (/*{ children }*/) => {
 
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
-                <span className="fa-stack fa-4x" style={{cursor: "pointer"}}>
+                <span className="fa-stack fa-4x" style={{cursor: "pointer"}} onClick={() => openWebsite(facebookUrl)}>
                   <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
                   <i className="fa fa-facebook fa-stack-1x"></i>
                 </span>
                 <h5 className={classNames(classes.description, classes.grayText)}>Facebook</h5>
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <span className="fa-stack fa-4x" style={{cursor: "pointer"}}>
+                <span className="fa-stack fa-4x" style={{cursor: "pointer"}} onClick={() => openWebsite(instagramUrl)}>
                   <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
                   <i className="fa fa-instagram fa-stack-1x"></i>
                 </span>
-
                 <h5 className={classNames(classes.description, classes.grayText)}>Instagram</h5>
-                
               </GridItem>
             </GridContainer>
           </div>

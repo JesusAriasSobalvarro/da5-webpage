@@ -1,8 +1,8 @@
 import React from "react"
 import GrupyIWspolnoty from "../layouts/GrupyIWspolnoty"
 
-const DuszpasterzePage = () => (
+const GrupyIWspolnotyPage = () => (
   <GrupyIWspolnoty />
 )
 
-export default DuszpasterzePage
+export default GrupyIWspolnotyPage

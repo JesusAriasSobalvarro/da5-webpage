@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 // nodejs library that concatenates classes -------------------------------------
 import classNames from "classnames";
 
+import { facebookUrl, instagramUrl } from "../../layouts/Common.js";
+
 // material-ui core components --------------------------------------------------
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -15,9 +17,15 @@ import Button from "../CustomButtons/Button.js";
 
 // Styles -----------------------------------------------------------------------
 import styles from "../../assets/jss/material-kit-react/components/footerStyle";
-import "../../assets/css/custom-style.css"
+import "../../assets/css/custom-style.css";
+import customClasses from "../../layouts/CustomClasses.js";
 
-const useStyles = makeStyles(styles);
+const style = {
+  ...styles,
+  ...customClasses
+}
+
+const useStyles = makeStyles(style);
 
 export default function Footer(props) {
   const classes = useStyles();
@@ -42,10 +50,10 @@ export default function Footer(props) {
               <span className={classes.block}>Follow Us:</span>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#">
+              <a href={facebookUrl}>
                 <i className={classes.socialIcons + " fa fa-facebook-square"} />
               </a>
-              <a href="#">
+              <a href={instagramUrl}>
                 <i className={classes.socialIcons + " fa fa-instagram"} />
               </a>
             </ListItem>

@@ -17,7 +17,7 @@
     "gatsby-plugin-offline": "^3.0.16",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.32",
-    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-source-filesystem": "^2.1.35",
     "gatsby-source-firestore": "^1.0.3",
     "gatsby-transformer-sharp": "^2.2.23",
     "global": "^4.4.0",
@@ -35,7 +35,8 @@
     "react-router-dom": "5.0.1",
     "react-scripts": "3.1.0",
     "react-slick": "0.25.2",
-    "react-swipeable-views": "0.13.3"
+    "react-swipeable-views": "0.13.3",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "@babel/cli": "7.5.5",
