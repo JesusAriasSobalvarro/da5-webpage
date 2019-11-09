@@ -57,6 +57,9 @@ const customClasses = {
         fontFamily: `"Roboto Slab", "Times New Roman", serif`,
         marginTop: ".625rem",
         fontSize: "0.95rem"
+    },
+    pointerCursor: {
+        cursor: "pointer"
     }
 };
 

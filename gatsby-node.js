@@ -1,7 +1,24 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// const path = require('path');
 
-// You can delete this file if you're not using it
+// exports.createPages =  ({ boundActionCreators, graphql }) => {
+//     const { createPage } = boundActionCreators
+
+//     const galeriaTemplate = path.resolve('src/templates/GaleriaTemplate.js')
+
+//     return graphql(`{
+//         allFile(filter: {sourceInstanceName: {eq: "galeria"}}) {
+//             distinct(field: relativeDirectory)
+//           }
+//     }`).then(res => {
+//         if (res.errors) {
+//             return Promise.reject(res.errors)
+//         }
+
+//         res.data.allFile.distinct.forEach(folder => {
+//             createPage({
+//                 path: folder,
+//                 component: galeriaTemplate
+//             })
+//         });
+//     })
+// }

@@ -170,8 +170,8 @@ const GrupyIWspolnoty = () => {
   )
 }
 
-GrupyIWspolnoty.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+// GrupyIWspolnoty.propTypes = {
+//   children: PropTypes.node.isRequired,
+// }
 
 export default GrupyIWspolnoty
