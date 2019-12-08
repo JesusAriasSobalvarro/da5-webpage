@@ -39,6 +39,10 @@ const useStyles = makeStyles(allStyles);
 const HomePage = (/*{ children }*/) => {
   const classes = useStyles();
 
+  /*  ========================================================
+    The following code queries pictures and data that will be
+    dislayed in the Home Page
+    ========================================================== */
   const data = useStaticQuery(graphql`
     query getHomePage {
         homePics: allFile(filter: {relativePath: {regex: "/^Home/"}}) {
@@ -65,16 +69,20 @@ const HomePage = (/*{ children }*/) => {
       }
   `)
 
-  var homeEvents = new Array();
-  var homeEventsCards = new Array();
-  var homePics = new Array();
+  var homeEvents = [];
+  var homeEventsCards = [];
+  var homePics = [];
 
   if (data && data.homePics && data.homePics.edges) {
     _.each(data.homePics.edges, item => {
       homePics.push(item.node);
     })
-
   }
+
+  /*  ========================================================
+    Iterating through each Event of the query; mapping each element
+    to its corresponding Image and returning a card element
+  ========================================================== */
 
   if (data && data.homeEvents && data.homeEvents.edges) {
     _.each(data.homeEvents.edges, item => {
@@ -108,19 +116,24 @@ const HomePage = (/*{ children }*/) => {
   }
 
   const kaplica = _.select(data.homePics.edges, (node) => {
-    return node.node.name == "kaplica"
+    return node.node.name === "kaplica"
   })
 
+  /*  ========================================================
+    The following constants store pictures that will be displayed
+    in the carousel
+  ========================================================== */
+
   const stMaximilian = _.select(data.homePics.edges, (node) => {
-    return node.node.name == "maximilian-kolbe"
+    return node.node.name === "maximilian-kolbe"
   })
 
   const popeFrancis = _.select(data.homePics.edges, (node) => {
-    return node.node.name == "pope-francis"
+    return node.node.name === "pope-francis"
   })
 
   const stJohnPaul = _.select(data.homePics.edges, (node) => {
-    return node.node.name == "john-paul-ii"
+    return node.node.name === "john-paul-ii"
   })
 
   return (
@@ -135,6 +148,9 @@ const HomePage = (/*{ children }*/) => {
           color: "white"
         }} />
 
+      {/*  ========================================================
+            Kaplica image with website Title
+          ========================================================== */}
       <Parallax filterZ>
         <Img
           style={{ position: "absolute", height: "100%", width: "100%", objectFit: "cover" }}
@@ -165,8 +181,10 @@ const HomePage = (/*{ children }*/) => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
+        {/* ==========================================================
+              Jak zacząć element
+            ========================================================== */}
         <div className={classes.container}>
-
           <div className={classes.firstSection}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={12}>
@@ -181,6 +199,9 @@ const HomePage = (/*{ children }*/) => {
             </GridContainer>
           </div>
 
+          {/* ==========================================================
+                Aktualności
+              ========================================================== */}
           <div className={classes.section}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={12}>
@@ -193,6 +214,9 @@ const HomePage = (/*{ children }*/) => {
           </div>
 
           <div className={classes.section}>
+            {/* ==========================================================
+                  Carousel
+                ========================================================== */}
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
                 <Carousel
@@ -202,7 +226,7 @@ const HomePage = (/*{ children }*/) => {
                   autoPlay={true}
                   infiniteLoop={true}
                   interval={6000}>
-                    <div className={classes.fullHeight}>
+                  <div className={classes.fullHeight}>
                     <Img
                       style={{ height: "100%", width: "100%" }}
                       className={classes.imgCardTop}
@@ -243,6 +267,9 @@ const HomePage = (/*{ children }*/) => {
             </GridContainer>
           </div>
 
+          {/* ==========================================================
+                Facebook & Instagram 
+              ========================================================== */}
           <div className={classes.section}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
@@ -273,11 +300,12 @@ const HomePage = (/*{ children }*/) => {
             </GridContainer>
           </div>
 
+          {/* ==========================================================
+                How to find us
+              ========================================================== */}
           <MapCard />
-
         </div>
       </div>
-
       <Footer />
     </>
   )
