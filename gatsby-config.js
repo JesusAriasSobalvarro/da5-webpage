@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,6 +62,20 @@ module.exports = {
       options: {
         name: `galeria`,
         path: `${__dirname}/src/images/galeria`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `plantygodnia`,
+        path: `${__dirname}/src/pages/PlanTygodnia/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `home`,
+        path: `${__dirname}/src/pages/Home/`,
       },
     },
   ],

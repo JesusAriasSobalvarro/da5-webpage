@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-source-firestore": "^1.0.3",
+    "gatsby-transformer-json": "^2.2.18",
     "gatsby-transformer-sharp": "^2.3.2",
     "global": "^4.4.0",
     "google-maps-react": "^2.0.2",

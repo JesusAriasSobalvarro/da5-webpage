@@ -1,0 +1,138 @@
+[
+    {
+        "day": "Poniedziałek",
+        "date": "18.11.19",
+        "events": [
+            {
+                "hour": "18:30",
+                "name": "Różaniec"
+            },
+            {
+                "hour": "19:00",
+                "name": "Msza Święta"
+            },
+            {
+                "hour": "20:00",
+                "name": "Spotkanie Oazy studenckiej"
+            }
+        ]
+    },
+    {
+        "day": "Wtorek",
+        "date": "19.11.19",
+        "events": [
+            {
+                "hour": "18:30",
+                "name": "Różaniec"
+            },
+            {
+                "hour": "19:00",
+                "name": "Msza Święta"
+            },
+            {
+                "hour": "20:00",
+                "name": "Modlitwa uwielbienia"
+            },
+            {
+                "hour": "20:00",
+                "name": "Kurs tańca"
+            }
+        ]
+    },
+    {
+        "day": "Środa",
+        "date": "20.11.19",
+        "events": [
+            {
+                "hour": "7:00",
+                "name": "Jutrznia"
+            },
+            {
+                "hour": "18:30",
+                "name": "Różaniec"
+            },
+            {
+                "hour": "19:00",
+                "name": "Msza Święta"
+            },
+            {
+                "hour": "19:40",
+                "name": "Cisza i słowo (adoracja i medytacja)"
+            },
+            {
+                "hour": "20:15",
+                "name": "Spotkanie Liturgicznej Służby Ołtarza"
+            },
+            {
+                "hour": "20:15",
+                "name": "\"Pod ostrzałem\" - spotkanie z s. Ewą Godzińską pt. \"Katechumenat. Droga do Kościoła\""
+            }
+        ]
+    },
+    {
+        "day": "Czwartek",
+        "date": "21.11.19",
+        "events": [
+            {
+                "hour": "16:00-18:30",
+                "name": "Świetlica dla niepełnosprawnych"
+            },
+            {
+                "hour": "18:30",
+                "name": "Różaniec"
+            },
+            {
+                "hour": "19:00",
+                "name": "Msza Święta"
+            },
+            {
+                "hour": "20:00",
+                "name": "Exodus"
+            },
+            {
+                "hour": "20:00",
+                "name": "Próba scholi"
+            },
+            {
+                "hour": "20:00",
+                "name": "Spotkanie studentów dla RP"
+            }
+        ]
+    },
+    {
+        "day": "Piątek",
+        "date": "22.11.19",
+        "events": [
+            {
+                "hour": "7:00",
+                "name": "Msza Święta"
+            },
+            {
+                "hour": "7:30",
+                "name": "Wspólne śniadanie"
+            }
+        ]
+    },
+    {
+        "day": "Niedziela",
+        "date": "18.11.19",
+        "events": [
+            {
+                "hour": "16:00",
+                "name": "Piłka nożna w sali seminarium duchownego"
+            },
+            {
+                "hour": "17:00",
+                "name": "Próba scholi"
+            },
+            {
+                "hour": "18:53",
+                "name": "\"Za siedem siódma\" - siedem minut o liturgii w archikatedrze"
+            },
+            {
+                "hour": "19:00",
+                "name": "Msza Święta Akademicka w Bazylice Archikatedralnej"
+            }
+        ]
+    }
+]

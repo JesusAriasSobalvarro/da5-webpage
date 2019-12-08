@@ -210,7 +210,7 @@ class Galeria extends React.Component {
                                                         name
                                                         relativePath
                                                         childImageSharp {
-                                                            fluid(fit: COVER) {
+                                                            fluid(fit: COVER, quality: 90) {
                                                               ...GatsbyImageSharpFluid
                                                             }
                                                           }

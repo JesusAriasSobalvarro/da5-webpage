@@ -28,42 +28,26 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      {/* <ListItem className={classes.listItem}>
+
+      <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Duszpasterstwa"
+          buttonText="Plan"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              Czym jest duszpasterstwo akademickie?
+            <Link to="/plantygodnia" className={classes.dropdownLink}>
+              Plan Tygodnia
             </Link>,
-             <Link to="duszpasterze/" className={classes.dropdownLink}>
-             Duszpasterze
-           </Link>,
-           <Link to="/" className={classes.dropdownLink}>
-           Historia duszpasterstwa
-         </Link>,
-         <Link to="/" className={classes.dropdownLink}>
-         Kaplica
-       </Link>,
-       <Link to="/" className={classes.dropdownLink}>Duszpasterstwa Akademickie w Łodzi</Link>
+            <Link to="/wtymmiesiacu" className={classes.dropdownLink}>
+            W Tym Miesiacu
+            </Link>
           ]}
         />
-      </ListItem> */}
-
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        > Plan
-        </Button>
-      </ListItem> 
-
+      </ListItem>
+{/* 
       <ListItem className={classes.listItem}>
         <Button
           color="transparent"
@@ -71,17 +55,17 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
         > Aktualności
         </Button>
-      </ListItem>
+      </ListItem> */}
 
       <ListItem className={classes.listItem}>
         <Link to="/grupyiwspolnoty" className={classes.navLink}>Grupy i wspólnoty</Link>
-      </ListItem> 
+      </ListItem>
 
       <ListItem className={classes.listItem}>
         <Link to="/galeria" className={classes.navLink}>Galeria</Link>
       </ListItem>
 
-      
+
       <ListItem className={classes.listItem}>
         <Link to="/duszpasterze" className={classes.navLink}>Duszpasterze</Link>
       </ListItem>
@@ -89,7 +73,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Link to="/sakramenty" className={classes.navLink}>Sakramenty</Link>
       </ListItem>
-      
+
 
 
 

@@ -1,12 +1,12 @@
 // @material-ui/core components -------------------------------------------
 import { makeStyles } from "@material-ui/core/styles";
-
 // nodejs library that concatenates classes -------------------------------
 import classNames from "classnames";
-
 import React from "react";
 // import PropTypes from "prop-types";
-// import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import _ from "underscore"
 import { facebookUrl, instagramUrl, openWebsite } from "./Common.js";
 // Components used in this layout -----------------------------------------
 import Header from "../components/Header/Header";
@@ -17,19 +17,21 @@ import GridItem from "../components/Grid/GridItem";
 import Button from "../components/CustomButtons/Button"
 import Footer from "../components/Footer/Footer.js";
 import MapCard from "../components/Maps/MapCard.js";
-import EventSection from "./EventSection";
 import { Carousel } from "react-responsive-carousel";
-
+import Card from "../components/Card/Card.js"
+import CardBody from "../components/Card/CardBody.js"
 // Styles -----------------------------------------------------------------
 import styles from "../assets/jss/material-kit-react/views/landingPage.js";
 import customStyles from "./CustomClasses.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "../assets/css/custom-style.css";
+import { cardTitle } from "../assets/jss/material-kit-react.js";
 
 const allStyles = {
   ...styles,
-  ...customStyles
+  ...customStyles,
+  cardTitle
 }
 
 const useStyles = makeStyles(allStyles);
@@ -37,45 +39,89 @@ const useStyles = makeStyles(allStyles);
 const HomePage = (/*{ children }*/) => {
   const classes = useStyles();
 
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query getHomePage {
+        homePics: allFile(filter: {relativePath: {regex: "/^Home/"}}) {
+          edges {
+            node {
+              name
+              childImageSharp {
+                fluid(fit: COVER, quality: 90) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        homeEvents: allHomeJson {
+          edges {
+            node {
+              title
+              description,
+              image
+            }
+          }
+        }
+      }
+  `)
 
-  const mockData = [
-    {
-      name: "Zapraszamy Na Rekolekcje Na Dobry Początek",
-      description: "",
-      image: "http://da5.lodz.pl/wp-content/uploads/0001.jpg",
-      date: "2019-10-19T01:30:00.000Z"
-    },
-    {
-      name: "Event 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      image: "http://da5.lodz.pl/wp-content/uploads/pielgrzymka-oda.jpg",
-      date: "2019-10-19T01:30:00.000Z"
-    },
-    {
-      name: "Ogólnopolska Pielgrzymka Akademicka na Jasną Górę",
-      description: "Serdecznie Was zapraszamy do wzięcia udziału w 83 Ogólnopolskiej Pielgrzymce Akademickiej na Jasną Górę. Pani Jasnogórskiej będziemy zawierzać nasze studiowanie, egzaminy, wybór dalszej drogi. Wyruszamy spod DA5 w piątek około 15.00. Zapisywać można się do środy pisząc wiadomość na fanpage lub bezpośrednio w siedzibie DA przy ul. Skorupki 5.",
-      image: "http://da5.lodz.pl/wp-content/uploads/Biblia-polska-promo-6.png",
-      date: "2019-10-19T01:30:00.000Z"
-    }
-  ]
+  var homeEvents = new Array();
+  var homeEventsCards = new Array();
+  var homePics = new Array();
 
-  const mockData2 = [
-    {
-      name: "Zapraszamy Na Rekolekcje Na Dobry Początek",
-      description: "",
-      image: "http://da5.lodz.pl/wp-content/uploads/0001.jpg",
-      date: "2019-10-19T01:30:00.000Z"
-    }
-  ]
+  if (data && data.homePics && data.homePics.edges) {
+    _.each(data.homePics.edges, item => {
+      homePics.push(item.node);
+    })
+
+  }
+
+  if (data && data.homeEvents && data.homeEvents.edges) {
+    _.each(data.homeEvents.edges, item => {
+      homeEvents.push(item.node);
+    })
+
+    _.each(homeEvents, item => {
+      var image = _.where(homePics, { name: item.image })
+      var imageElement;
+      if (image) {
+        imageElement = <Img
+          style={{ height: "225px", width: "100%" }}
+          className={classes.imgCardTop}
+          fluid={image[0].childImageSharp.fluid}
+          alt={image[0].name}
+        />
+      }
+
+      homeEventsCards.push(
+        <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+          <Card>
+            {imageElement}
+            <CardBody style={{ minHeight: "225px" }}>
+              <h5 className={classes.cardTitle}>{item.title}</h5>
+              <p style={{ lineHeight: "2" }}>{item.description}</p>
+            </CardBody>
+          </Card>
+        </GridItem>
+      )
+    })
+  }
+
+  const kaplica = _.select(data.homePics.edges, (node) => {
+    return node.node.name == "kaplica"
+  })
+
+  const stMaximilian = _.select(data.homePics.edges, (node) => {
+    return node.node.name == "maximilian-kolbe"
+  })
+
+  const popeFrancis = _.select(data.homePics.edges, (node) => {
+    return node.node.name == "pope-francis"
+  })
+
+  const stJohnPaul = _.select(data.homePics.edges, (node) => {
+    return node.node.name == "john-paul-ii"
+  })
 
   return (
     <>
@@ -89,7 +135,13 @@ const HomePage = (/*{ children }*/) => {
           color: "white"
         }} />
 
-      <Parallax filter image={require("../assets/img/kaplica-2-1024x666.jpg")}>
+      <Parallax filterZ>
+        <Img
+          style={{ position: "absolute", height: "100%", width: "100%", objectFit: "cover" }}
+          className={classes.imgCardTop}
+          fluid={kaplica[0].node.childImageSharp.fluid}
+          alt={kaplica[0].node.name}
+        />
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -98,14 +150,12 @@ const HomePage = (/*{ children }*/) => {
                 Przyjdź, drzwi dla Ciebie są zawsze otwarte!
               </h4>
               <br />
-
               <Button
                 color="danger"
                 size="lg"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 <i className={"fa fa-play"} style={{ marginRight: "5px" }} />
                 Watch video
               </Button>
@@ -131,7 +181,16 @@ const HomePage = (/*{ children }*/) => {
             </GridContainer>
           </div>
 
-          <EventSection title={"Nadchodzące Wydarzenia"} events={mockData}></EventSection>
+          <div className={classes.section}>
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={12}>
+                <h2 className={classNames(classes.title, classes.grayText)}>Aktualności</h2>
+              </GridItem>
+            </GridContainer>
+            <GridContainer style={{ display: "flex", justifyContent: (homeEventsCards.length < 3) ? "center" : "flex-start" }}>
+              {homeEventsCards}
+            </GridContainer>
+          </div>
 
           <div className={classes.section}>
             <GridContainer justify="center">
@@ -143,22 +202,37 @@ const HomePage = (/*{ children }*/) => {
                   autoPlay={true}
                   infiniteLoop={true}
                   interval={6000}>
-                  <div className={classes.fullHeight}>
-                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/pope-francis.jpg")} />
+                    <div className={classes.fullHeight}>
+                    <Img
+                      style={{ height: "100%", width: "100%" }}
+                      className={classes.imgCardTop}
+                      fluid={popeFrancis[0].node.childImageSharp.fluid}
+                      alt={popeFrancis[0].node.name}
+                    />
                     <div className={classes.overlay}>
                       <p className={"quoteBody"}>The world tells us to seek success, power and money; God tells us to seek humility, service and love.</p>
                       <p className={"quoteAuthor"}>Pope Francis</p>
                     </div>
                   </div>
                   <div className={classes.fullHeight}>
-                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/john-paul-ii.jpg")} />
+                    <Img
+                      style={{ height: "100%", width: "100%" }}
+                      className={classes.imgCardTop}
+                      fluid={stJohnPaul[0].node.childImageSharp.fluid}
+                      alt={stJohnPaul[0].node.name}
+                    />
                     <div className={classes.overlay}>
                       <p className={"quoteBody"}>Freedom consists not in doing what we like, but having the right to do what we ought.</p>
                       <p className={"quoteAuthor"}>Saint John Paul II</p>
                     </div>
                   </div>
                   <div className={classes.fullHeight}>
-                    <img className={classNames(classes.fullHeight, classes.sliderImage)} src={require("../assets/img/maximilian-kolbe.jpg")} />
+                    <Img
+                      style={{ height: "100%", width: "100%" }}
+                      className={classes.imgCardTop}
+                      fluid={stMaximilian[0].node.childImageSharp.fluid}
+                      alt={stMaximilian[0].node.name}
+                    />
                     <div className={classes.overlay}>
                       <p className={"quoteBody"}>Let us remember that love lives through sacrifice and is nourished by giving. Without sacrifice there is no love.</p>
                       <p className={"quoteAuthor"}>Sain Maximilian Kolbe</p>
@@ -174,7 +248,7 @@ const HomePage = (/*{ children }*/) => {
               <GridItem xs={12} sm={12} md={12}>
                 <h2 className={classNames(classes.title, classes.grayText)}>Follow Us</h2>
                 <h5 className={classNames(classes.description, classes.grayText)}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   <br />
                   Aliquam mollis auctor libero.
                 </h5>
@@ -183,15 +257,15 @@ const HomePage = (/*{ children }*/) => {
 
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
-                <span className="fa-stack fa-4x" style={{cursor: "pointer"}} onClick={() => openWebsite(facebookUrl)}>
-                  <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
+                <span className="fa-stack fa-4x" style={{ cursor: "pointer" }} onClick={() => openWebsite(facebookUrl)}>
+                  <i className="fa fa-circle fa-stack-2x" style={{ color: "#9c27b0" }}></i>
                   <i className="fa fa-facebook fa-stack-1x"></i>
                 </span>
                 <h5 className={classNames(classes.description, classes.grayText)}>Facebook</h5>
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <span className="fa-stack fa-4x" style={{cursor: "pointer"}} onClick={() => openWebsite(instagramUrl)}>
-                  <i className="fa fa-circle fa-stack-2x" style={{color: "#9c27b0"}}></i>
+                <span className="fa-stack fa-4x" style={{ cursor: "pointer" }} onClick={() => openWebsite(instagramUrl)}>
+                  <i className="fa fa-circle fa-stack-2x" style={{ color: "#9c27b0" }}></i>
                   <i className="fa fa-instagram fa-stack-1x"></i>
                 </span>
                 <h5 className={classNames(classes.description, classes.grayText)}>Instagram</h5>
@@ -205,22 +279,6 @@ const HomePage = (/*{ children }*/) => {
       </div>
 
       <Footer />
-
-      {/* <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div> */}
     </>
   )
 }

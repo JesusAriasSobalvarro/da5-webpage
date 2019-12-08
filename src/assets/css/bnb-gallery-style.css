@@ -452,6 +452,7 @@ img {
     /* visually centered */
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+    
   
   /* gallery animation */
   .gallery__animation-appear {

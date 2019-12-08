@@ -4,6 +4,7 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
+import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -66,7 +67,11 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <img className={"brand-logo"} src={require("../../assets/img/da5_logo.png")} alt="Duszpasterstwo Akademickie Logo" />;
+  const brandComponent = <>
+    <Link to="/">
+      <img className={"brand-logo"} src={require("../../assets/img/da5_logo.png")} alt="Duszpasterstwo Akademickie Logo" />
+    </Link>
+  </>
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>

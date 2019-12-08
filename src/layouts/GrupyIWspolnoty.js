@@ -7,6 +7,10 @@ import classNames from "classnames";
 import React from "react"
 import PropTypes from "prop-types"
 
+import Img from "gatsby-image";
+import {useStaticQuery, graphql} from "gatsby"
+import _ from "underscore"
+
 // Components used in this layout -----------------------------------------
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
@@ -36,6 +40,27 @@ const useStyles = makeStyles(allStyles);
 const GrupyIWspolnoty = () => {
   const classes = useStyles();
 
+  const data = useStaticQuery(graphql`
+  query getGrupyIWspolnotyPhotos {
+      allFile(filter: {relativePath: {regex: "/^GrupyIWspolnoty/"}}) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid(fit: COVER, quality: 90) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+`)
+
+const wspolnotyPic = _.select(data.allFile.edges, (node) => {
+  return node.node.name == "community"
+})
+
   return (
     <>
       <Header
@@ -63,10 +88,13 @@ const GrupyIWspolnoty = () => {
           <div className={classes.section}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={8}>
-                <img src="https://www.cohealth.org.au/wp-content/uploads/2016/05/Community-Group-for-min-page.png" style={{
-                  width: "100%",
-                  borderRadius: "6px", height: "320px", objectFit: "cover"
-                }} />
+                <Img
+                  style={{ width: "100%", objectFit: "cover", 
+                  borderRadius:"3px", marginBottom:"10px" }}
+                  
+                  fluid={wspolnotyPic[0].node.childImageSharp.fluid}
+                  alt={wspolnotyPic[0].node.name}
+                />
                 <h5 className={classNames(classes.description, classes.grayText)}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus lectus dictum est tincidunt eleifend.
                   Curabitur eu ante sit amet sapien fringilla efficitur facilisis in dui. In justo erat, dictum et mattis at, gravida a est.

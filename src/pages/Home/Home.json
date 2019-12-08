@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Niedzielna Akademicka Msza Święta",
+        "description": "W każdą niedzielę Msza Święta dla studentów o godz. 19:00 w Bazylice Archikatedralnej przy ulicy Piotrkowskiej 265.",
+        "image": "katedra-lodz",
+        "date": ""
+    },
+    {
+        "title": "Schola akademicka",
+        "description": "Nie wahaj się długo, śpiewanie w naszej scholi to niesamowita przygoda i piękne doświadczenie! Śpiewamy na mszach akademickich o 19.00 w łódzkiej archikatedrze. Zapraszamy na próbę w niedzielę o 17.00.",
+        "image": "schola",
+        "date": ""
+    },
+    {
+        "title": "Kurs tańca",
+        "description": "Kurs tańca dla par i singli prowadzonym przez wspaniałą nauczycielkę, która tak samo jak my jest studentką. W każdy wtorek o 20.00.",
+        "image": "dance",
+        "date": ""
+    },
+    {
+        "title": "Wspólnota Exodus",
+        "description": "Męska grupa formacyjna, w której nacisk kładziemy na modlitwę, post i braterstwo. Podejmujemy się różnych wyzwań, by stawać się odpowiedzialnymi mężczyznami w służbie Pana.",
+        "image": "exodus",
+        "date": ""
+    },
+    {
+        "title": "Studenci dla Rzeczypospolitej",
+        "description": "Organizacja zrzeszająca studentów i absolwentów polskich wyższych uczelni o poglądach konserwatywnych. W Łodzi spotkania odbywają się co drugi czwartek w naszym duszpasterstwie.",
+        "image": "sdrp",
+        "date": ""
+    },
+    {
+        "title": "Codzienny różaniec",
+        "description": "Modlitwa różańcowa codziennie o godzinie 18.30 w kaplicy Duszpasterstwa Akademickiego.",
+        "image": "rosary",
+        "date": ""
+    },
+    {
+        "title": "Adoracja Najświętszego Sakramentu",
+        "description": "Przez cały dzień jest możliwość adoracji Najświętszego Sakramentu w kaplicy Duszpasterstwa Akademickiego.",
+        "image": "adoracja",
+        "date": ""
+    },
+    {
+        "title": "Świetlica dla osób niepełnosprawnych",
+        "description": "Podaruj siebie, czas, uśmiech! Zostań wolontariuszem! W każdy czwartek w godzinach 16:30 – 18:00 w sali Duszpasterstwa Akademickiego.",
+        "image": "dzieci",
+        "date": ""
+    }
+]
