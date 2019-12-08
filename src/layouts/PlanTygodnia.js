@@ -5,9 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 import React from "react"
-import PropTypes from "prop-types"
-import Img from "gatsby-image";
-import {useStaticQuery} from "gatsby"
+import { useStaticQuery } from "gatsby"
 import _ from "underscore"
 
 // Components used in this layout -----------------------------------------
@@ -17,8 +15,6 @@ import GridContainer from "../components/Grid/GridContainer"
 import GridItem from "../components/Grid/GridItem"
 import Card from "../components/Card/Card";
 import CardBody from "../components/Card/CardBody";
-import CardFooter from "../components/Card/CardFooter";
-import Button from "../components/CustomButtons/Button";
 import Footer from "../components/Footer/Footer.js";
 
 // Styles -----------------------------------------------------------------
@@ -39,6 +35,9 @@ const useStyles = makeStyles(allStyles);
 const PlanTygodnia = () => {
     const classes = useStyles();
 
+    /*  ========================================================
+        Query the JSON that contains the data for PlanTygodnia
+    ========================================================== */
     const data = useStaticQuery(graphql`
     query getPlanTygodnia {
         allPlanTygodniaJson {
@@ -56,43 +55,46 @@ const PlanTygodnia = () => {
       }
   `)
 
-  var dailyPlan = new Array();
-  if (data && data.allPlanTygodniaJson && data.allPlanTygodniaJson.edges) {
-      
-      _.each(data.allPlanTygodniaJson.edges, (item) => {
-          dailyPlan.push(item.node);
+    /*  ===============================================================
+            Iterate through each day of the PlanTygodnia JSON, generate 
+            a Card and map each subsequent event with its corresponding
+            data.
+        =============================================================== */
+    var dailyPlan = [];
+    if (data && data.allPlanTygodniaJson && data.allPlanTygodniaJson.edges) {
+        _.each(data.allPlanTygodniaJson.edges, (item) => {
+            dailyPlan.push(item.node);
         })
     }
-    console.log(dailyPlan)
-    var dailyPlanCards = new Array();
+    var dailyPlanCards = [];
     _.each(dailyPlan, item => {
-        var events = new Array();
+        var events = [];
         _.each(item.events, event => {
             events.push(
-            <h5 className={classNames(classes.description)} style={{lineHeight:"0.8em", marginTop:"25px"}}>
-                <span style={{lineHeight:"1.55em"}}>{event.hour} - </span>
-                <span style={{lineHeight:"1.55em"}}>{event.name}</span>
-                <br />
-            </h5>)
+                <h5 className={classNames(classes.description)} style={{ lineHeight: "0.8em", marginTop: "25px" }}>
+                    <span style={{ lineHeight: "1.55em" }}>{event.hour} - </span>
+                    <span style={{ lineHeight: "1.55em" }}>{event.name}</span>
+                    <br />
+                </h5>)
         })
-        dailyPlanCards.push(                                
+        dailyPlanCards.push(
             <GridItem xs={12} sm={12} md={12}>
-            <Card>
-                <CardBody style={{marginTop:"20px"}}>
-                    <span className={classNames(classes.title)} style={{fontSize:"1.4rem", lineHeight:"1.55em"}}>
-                        {item.day}
-                        <br />
-                    </span>
-                    <span className={classNames(classes.description)} style={{fontSize:"1rem", lineHeight:"1.55em"}}>
-                        {item.date}
-                    </span>
-                    {events}
-                </CardBody>
-            </Card>
-        </GridItem>)
+                <Card>
+                    <CardBody style={{ marginTop: "20px" }}>
+                        <span className={classNames(classes.title)} style={{ fontSize: "1.4rem", lineHeight: "1.55em" }}>
+                            {item.day}
+                            <br />
+                        </span>
+                        <span className={classNames(classes.description)} style={{ fontSize: "1rem", lineHeight: "1.55em" }}>
+                            {item.date}
+                        </span>
+                        {events}
+                    </CardBody>
+                </Card>
+            </GridItem>)
     })
 
-  return (
+    return (
         <>
             <Header
                 color="primary"
@@ -102,6 +104,9 @@ const PlanTygodnia = () => {
                 fixed
             />
 
+            {/*  ========================================================
+                    Page Title
+                ========================================================== */}
             <div className={classNames(classes.main, classes.mainRaised, "main-card-margin")}>
 
                 <div className={classes.container}>
@@ -114,15 +119,16 @@ const PlanTygodnia = () => {
                     </div>
                 </div>
 
-
+                {/*  ========================================================
+                        Dinamycally generated cards
+                    ========================================================== */}
                 <div className={classes.container}>
-                    <div style={{paddingBottom:"35px"}}>
+                    <div style={{ paddingBottom: "35px" }}>
                         <GridContainer>
-{dailyPlanCards}
+                            {dailyPlanCards}
                         </GridContainer>
                     </div>
                 </div>
-
             </div>
 
             <Footer />
