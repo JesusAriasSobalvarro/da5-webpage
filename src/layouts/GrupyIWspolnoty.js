@@ -5,10 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 import React from "react"
-import PropTypes from "prop-types"
-
 import Img from "gatsby-image";
-import {useStaticQuery, graphql} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import _ from "underscore"
 
 // Components used in this layout -----------------------------------------
@@ -57,9 +55,9 @@ const GrupyIWspolnoty = () => {
     }
 `)
 
-const wspolnotyPic = _.select(data.allFile.edges, (node) => {
-  return node.node.name == "community"
-})
+  const wspolnotyPic = _.select(data.allFile.edges, (node) => {
+    return node.node.name === "community"
+  })
 
   return (
     <>
@@ -72,7 +70,9 @@ const wspolnotyPic = _.select(data.allFile.edges, (node) => {
       />
 
       <div className={classNames(classes.main, classes.mainRaised, "main-card-margin")}>
-
+      {/* =============================================================
+            Page title
+          ============================================================= */}
         <div className={classes.container}>
           <div className={classes.normalPageTitleContainer}>
             <GridContainer>
@@ -83,15 +83,18 @@ const wspolnotyPic = _.select(data.allFile.edges, (node) => {
           </div>
         </div>
 
-
         <div className={classes.container}>
           <div className={classes.section}>
             <GridContainer>
+              {/* =============================================================
+                    Grupy picture and description
+                  ============================================================= */}
               <GridItem xs={12} sm={12} md={8}>
                 <Img
-                  style={{ width: "100%", objectFit: "cover", 
-                  borderRadius:"3px", marginBottom:"10px" }}
-                  
+                  style={{
+                    width: "100%", objectFit: "cover",
+                    borderRadius: "3px", marginBottom: "10px"
+                  }}
                   fluid={wspolnotyPic[0].node.childImageSharp.fluid}
                   alt={wspolnotyPic[0].node.name}
                 />
@@ -101,105 +104,86 @@ const wspolnotyPic = _.select(data.allFile.edges, (node) => {
                   Nullam faucibus ex eu lectus semper, dapibus viverra erat finibus. Cras sed pellentesque purus.
                   Phasellus at sem elit. Fusce sed nisl non lectus ultricies sollicitudin at et leo. Vestibulum sed nisi purus.
                   Cras id ullamcorper diam. Nulla nec rhoncus elit.
-            </h5>
+                </h5>
               </GridItem>
+              {/* =============================================================
+                    Group leader profile
+                  ============================================================= */}
               <GridItem xs={12} sm={12} md={4}>
-
-
-
                 <Card plain>
                   <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
-                    <img src="https://i.redd.it/6onq25y0sh311.jpg" alt="..." className={classNames(classes.imgRaised,
+                    <img src="https://i.redd.it/6onq25y0sh311.jpg" alt="..." 
+                      className={classNames(classes.imgRaised,
                       classes.imgRoundedCircle,
                       classes.imgFluid)} />
                   </GridItem>
                   <h4 className={classes.cardTitle}>
                     Tomek Hadid
-                <br />
+                  <br />
                     <small className={classes.smallTitle}>Lider</small>
                   </h4>
                   <CardBody>
-                    <h5 className={classes.description} style={{marginBottom:"0px"}}>
+                    <h5 className={classes.description} style={{ marginBottom: "0px" }}>
                       You can write here details about one of your team members. You
                       can give more details about what they do. Feel free to add
                       some links for people to be able to
                       follow them outside the site.
-                </h5>
+                    </h5>
                   </CardBody>
+                  {/* =============================================================
+                        Leader contact
+                      ============================================================= */}
                   <CardFooter className={classNames(classes.justifyCenter, classes.contactContainer)}>
-                  <div>
-                    <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.margin5}>
-                        <i className={classes.socials + " fa fa-envelope"} />
-                      </Button>
-                      <a href="mailto:somemail@gmail.com" className={classNames(classes.primaryColorText, classes.margin5, classes.spanText)}>testmail@gmail.com</a>
+                    <div>
+                      {/* =============================================================
+                            Mail information
+                          ============================================================= */}
+                      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                        <Button
+                          justIcon
+                          color="transparent"
+                          className={classes.margin5}>
+                          <i className={classes.socials + " fa fa-envelope"} />
+                        </Button>
+                        <a href="mailto:somemail@gmail.com" className={classNames(classes.primaryColorText, classes.margin5, classes.spanText)}>testmail@gmail.com</a>
+                      </div>
+                      {/* =============================================================
+                            Phone information
+                          ============================================================= */}
+                      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                        <Button
+                          justIcon
+                          color="transparent"
+                          className={classes.margin5} >
+                          <i className={classes.socials + " fa fa-phone"} />
+                        </Button>
+                        <span className={classNames(classes.margin5, classes.spanText, classes.description)}>+48 123 456 789</span>
+                      </div>
+                      {/* =============================================================
+                            Facebook information
+                          ============================================================= */}
+                      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                        <Button
+                          justIcon
+                          color="transparent"
+                          className={classes.margin5} >
+                          <i className={classes.socials + " fa fa-facebook"} />
+                        </Button>
+                        <a href="LeaderProfile" className={classNames(classes.margin5, classes.spanText, classes.description)} 
+                          style={{ textDecoration: "none" }}>http://facebook.com</a>
+                      </div>
                     </div>
-
-                    <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.margin5} >
-                      <i className={classes.socials + " fa fa-phone"} />
-                    </Button>
-                      <span className={classNames(classes.margin5, classes.spanText, classes.description)}>+48 123 456 789</span>
-                    </div>
-
-                                        
-
-                    <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.margin5} >
-                        <i className={classes.socials + " fa fa-facebook"} />
-                      </Button>
-                      <a href="#" className={classNames(classes.margin5, classes.spanText, classes.description)} style={{ textDecoration: "none" }}>http://facebook.com</a>
-                    </div>
-
-                  </div>
-
                   </CardFooter>
                 </Card>
-
-
-
               </GridItem>
             </GridContainer>
           </div>
         </div>
-
-
-
-        {/* <img src="https://loremipsumcorp.com/wp-content/themes/loremipsum/img/share.png" style={{width: "100%"}} /> */}
-        {/* <GridContainer>
-              <GridItem xs={12} sm={12} md={8}>
-                <h2 className={classes.title} style={{ color: "#3C4858" }}>Duszpasterze</h2>
-              </GridItem>
-            </GridContainer>
-
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={12} style={{ display: "flex", justifyContent: "center" }}>
-                <img src={require("../assets/img/duszpasterze.jpg")} alt="" />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={12} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <p style={{ fontFamily: "Roboto", fontWeight: "30", color: "#3C4858" }}>Ksiądz Przemysław Góra</p>
-                <p style={{ fontFamily: "Roboto", fontWeight: "30", color: "#3C4858" }}>Ksiądz Radosław Krych</p>
-              </GridItem>
-            </GridContainer> */}
-
       </div>
-
+      
       <Footer />
     </>
   )
 }
-
-// GrupyIWspolnoty.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
 
 export default GrupyIWspolnoty

@@ -5,9 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 import React from "react"
-import PropTypes from "prop-types"
 import Img from "gatsby-image";
-import {useStaticQuery, graphql} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import _ from "underscore"
 
 // Components used in this layout -----------------------------------------
@@ -15,10 +14,6 @@ import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
 import GridContainer from "../components/Grid/GridContainer"
 import GridItem from "../components/Grid/GridItem"
-import Card from "../components/Card/Card";
-import CardBody from "../components/Card/CardBody";
-import CardFooter from "../components/Card/CardFooter";
-import Button from "../components/CustomButtons/Button";
 import Footer from "../components/Footer/Footer.js";
 
 // Styles -----------------------------------------------------------------
@@ -39,6 +34,10 @@ const useStyles = makeStyles(allStyles);
 const WTymMiesiacu = () => {
     const classes = useStyles();
 
+    /*  =========================================================
+            The following query returns a list of pictures in the 
+            WTtymMiesiącu folder
+        ========================================================== */
     const data = useStaticQuery(graphql`
     query getMonthPhotos {
         allFile(filter: {relativePath: {regex: "/^WTtymMiesiącu/"}}) {
@@ -56,34 +55,32 @@ const WTymMiesiacu = () => {
       }
   `)
 
-  var images = new Array();
-  if (data && data.allFile && data.allFile.edges) {
-    var flattenedNodes = new Array();
-
-    _.each(data.allFile.edges, (item) => {
-        flattenedNodes.push(item.node);
-    })
-
-    _.each(flattenedNodes, node => {
-        images.push(
-            <GridItem xs={12} sm={12} md={6} >
-
-                                            <Img
-                                        style={{ width: "100%", display: "block", objectFit: "cover" , borderRadius:"3px"}}
-                                        className={classes.imgCardTop}
-                                        fluid={node.childImageSharp.fluid}
-                                        alt={node.name}
-                                    />
-            </GridItem>
-        )
-    })
-    console.log(flattenedNodes)
-}
-
-  console.log(data)
+    /* ==========================================================
+        Map each element of the query to a corresponding element
+    ============================================================= */
+    var images = [];
+    if (data && data.allFile && data.allFile.edges) {
+        var flattenedNodes = [];
+        _.each(data.allFile.edges, (item) => {
+            flattenedNodes.push(item.node);
+        })
+        _.each(flattenedNodes, node => {
+            images.push(
+                <GridItem xs={12} sm={12} md={6} >
+                    <Img
+                        style={{ width: "100%", display: "block", objectFit: "cover", borderRadius: "3px" }}
+                        className={classes.imgCardTop}
+                        fluid={node.childImageSharp.fluid}
+                        alt={node.name}
+                    />
+                </GridItem>
+            )
+        })
+    }
 
 
-  return (
+
+    return (
         <>
             <Header
                 color="primary"
@@ -94,7 +91,9 @@ const WTymMiesiacu = () => {
             />
 
             <div className={classNames(classes.main, classes.mainRaised, "main-card-margin")}>
-
+            {/* =============================================================
+                    Page Title
+                ============================================================= */}
                 <div className={classes.container}>
                     <div className={classes.normalPageTitleContainer}>
                         <GridContainer>
@@ -104,16 +103,16 @@ const WTymMiesiacu = () => {
                         </GridContainer>
                     </div>
                 </div>
-
-
+            {/* =============================================================
+                    Images
+                ============================================================= */}
                 <div className={classes.container}>
-                    <div style={{paddingBottom:"35px"}}>
+                    <div style={{ paddingBottom: "35px" }}>
                         <GridContainer>
-{images}
+                            {images}
                         </GridContainer>
                     </div>
                 </div>
-
             </div>
 
             <Footer />
