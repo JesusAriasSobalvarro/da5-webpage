@@ -32,24 +32,6 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-firestore`,
-      options: {
-        credential: require("./da5-database-firebase-adminsdk-g29zr-94fd7a31a8.json"),
-        types: [
-          {
-            type: 'Events',
-            collection: 'Events',
-            map: event => ({
-              date: event.eventDate,
-              description: event.eventDescription,
-              image: event.eventImage,
-              name: event.eventName
-            }),
-          }
-        ]
-      }
-    },
-    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         stylesProvider: {
