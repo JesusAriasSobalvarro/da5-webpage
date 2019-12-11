@@ -22,8 +22,8 @@ The Gatsby CLI is available via npm and should be installed globally by running
 npm install -g gatsby-cli
 ```
 
-### Technologies used :computer:
-This website is used using the following technologies:
+### Technologies :computer:
+This website is built using the following technologies:
 * HTML
 * CSS
 * JavaScript
