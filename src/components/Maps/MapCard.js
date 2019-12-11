@@ -36,22 +36,14 @@ export default function MapCard(props) {
       </GridContainer>
 
       <GridContainer justify="center" >
-      
         <GridItem xs={12} sm={12} md={8}>
           <Card>
-
             <CardBody style={{ minHeight: "350px", padding: "0px" }}>
               <MapContainer></MapContainer>
             </CardBody>
           </Card>
-
         </GridItem>
-
-
       </GridContainer>
-
-
-
     </div>
   );
 }

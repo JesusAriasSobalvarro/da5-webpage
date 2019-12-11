@@ -5,9 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 import React from "react"
-import PropTypes from "prop-types"
 import Img from "gatsby-image";
-import {useStaticQuery} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import _ from "underscore"
 
 // Components used in this layout -----------------------------------------
@@ -17,8 +16,6 @@ import GridContainer from "../components/Grid/GridContainer"
 import GridItem from "../components/Grid/GridItem"
 import Card from "../components/Card/Card";
 import CardBody from "../components/Card/CardBody";
-import CardFooter from "../components/Card/CardFooter";
-import Button from "../components/CustomButtons/Button";
 import Footer from "../components/Footer/Footer.js";
 
 // Styles -----------------------------------------------------------------
@@ -54,24 +51,15 @@ const Sakramenty = () => {
           }
         }
       }
-      
-    
-      
-  `)
+    `)
 
-  console.log(data)
-    
-  const communionPic = _.select(data.allFile.edges, (node) => {
-      return node.node.name == "holy-communion"
-  })
+    const communionPic = _.select(data.allFile.edges, (node) => {
+        return node.node.name === "holy-communion"
+    })
 
-  const confessionaryPic = _.select(data.allFile.edges, (node) => {
-    return node.node.name == "confessionary"
-})
-  console.log(communionPic)
-
-  console.log(data.allFile.edges)
-
+    const confessionaryPic = _.select(data.allFile.edges, (node) => {
+        return node.node.name === "confessionary"
+    })
     return (
         <>
             <Header
@@ -99,19 +87,6 @@ const Sakramenty = () => {
                     <div className={classes.section}>
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={6}>
-                                {/* <img src="https://www.cohealth.org.au/wp-content/uploads/2016/05/Community-Group-for-min-page.png" style={{
-                  width: "100%",
-                  borderRadius: "6px", height: "320px", objectFit: "cover"
-                }} /> 
-                <div style={{backgroundColor: "black"}} ><h5>Hey</h5></div>
-                <h5 className={classNames(classes.description, classes.grayText)}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus lectus dictum est tincidunt eleifend.
-                  Curabitur eu ante sit amet sapien fringilla efficitur facilisis in dui. In justo erat, dictum et mattis at, gravida a est.
-                  Nullam faucibus ex eu lectus semper, dapibus viverra erat finibus. Cras sed pellentesque purus.
-                  Phasellus at sem elit. Fusce sed nisl non lectus ultricies sollicitudin at et leo. Vestibulum sed nisi purus.
-                  Cras id ullamcorper diam. Nulla nec rhoncus elit.
-            </h5> */}
-
                                 <Card>
                                     <Img
                                         style={{ height: "225px", width: "100%", display: "block", objectFit: "cover" }}
@@ -121,26 +96,26 @@ const Sakramenty = () => {
                                     />
                                     <CardBody>
                                         <h5 className={classNames(classes.description)}>
-                                                Do spowiedzi można przystąpić na dwa sposoby:
+                                            Do spowiedzi można przystąpić na dwa sposoby:
                                             <br />
                                             <br />
-                                                1. Umówić się z duszpasterzem na spowiedź pisząc na fanpage duszpasterstwa lub bezpośrednio do księdza duszpasterza.
-                                            <br/>
-                                                2. Przyjść do kaplicy DA5 przed różańcem od godz. 18.00.*
+                                            1. Umówić się z duszpasterzem na spowiedź pisząc na fanpage duszpasterstwa lub bezpośrednio do księdza duszpasterza.
                                             <br />
-                                                Ponadto sakrament pokuty jest sprawowany w każdą niedzielę podczas mszy akademickiej.
+                                            2. Przyjść do kaplicy DA5 przed różańcem od godz. 18.00.*
+                                            <br />
+                                            Ponadto sakrament pokuty jest sprawowany w każdą niedzielę podczas mszy akademickiej.
                                             <br />
                                             <br />
-                                                W przypadku nieobecności kapłana w konfesjonale przed różańcem, prosimy o telefon.
+                                            W przypadku nieobecności kapłana w konfesjonale przed różańcem, prosimy o telefon.
                                             <br />
-                                                Numery do naszych księży podane są w zakładce „Kontakt”.
+                                            Numery do naszych księży podane są w zakładce „Kontakt”.
                                         </h5>
                                     </CardBody>
                                 </Card>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={6}>
 
-                            <Card>
+                                <Card>
                                     <Img
                                         style={{ height: "225px", width: "100%", display: "block", objectFit: "cover" }}
                                         className={classes.imgCardTop}
@@ -151,7 +126,7 @@ const Sakramenty = () => {
                                         <h5 className={classNames(classes.description)}>
                                             Msza św. jest sprawowana codziennie w godzinach podanych w planie tygodniowym duszpasterstwa.
                                         <br />
-                                        <br />
+                                            <br />
                                             Jeśli masz specjalną intencję, w której chcesz, by była sprawowana msza, napisz do duszpasterza lub powiedz z przynajmniej trzydniowym wyprzedzeniem.
                                         </h5>
                                     </CardBody>
@@ -161,26 +136,6 @@ const Sakramenty = () => {
                         </GridContainer>
                     </div>
                 </div>
-
-
-
-                {/* <img src="https://loremipsumcorp.com/wp-content/themes/loremipsum/img/share.png" style={{width: "100%"}} /> */}
-                {/* <GridContainer>
-              <GridItem xs={12} sm={12} md={8}>
-                <h2 className={classes.title} style={{ color: "#3C4858" }}>Duszpasterze</h2>
-              </GridItem>
-            </GridContainer>
-
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={12} style={{ display: "flex", justifyContent: "center" }}>
-                <img src={require("../assets/img/duszpasterze.jpg")} alt="" />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={12} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <p style={{ fontFamily: "Roboto", fontWeight: "30", color: "#3C4858" }}>Ksiądz Przemysław Góra</p>
-                <p style={{ fontFamily: "Roboto", fontWeight: "30", color: "#3C4858" }}>Ksiądz Radosław Krych</p>
-              </GridItem>
-            </GridContainer> */}
-
             </div>
 
             <Footer />

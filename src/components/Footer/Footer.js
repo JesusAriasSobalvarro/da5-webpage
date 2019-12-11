@@ -10,10 +10,7 @@ import { facebookUrl, instagramUrl } from "../../layouts/Common.js";
 // material-ui core components --------------------------------------------------
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Favorite from "@material-ui/icons/Favorite";
-
-import Button from "../CustomButtons/Button.js";
 
 // Styles -----------------------------------------------------------------------
 import styles from "../../assets/jss/material-kit-react/components/footerStyle";
@@ -32,10 +29,6 @@ export default function Footer(props) {
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
-  const aClasses = classNames({
-    [classes.a]: true,
     [classes.footerWhiteFont]: whiteFont
   });
   return (
@@ -87,17 +80,8 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classNames(classes.right, classes.footerRightText)}>
-        &copy; 2013-{1900 + new Date().getYear()}{" "}Duszpasterswo Akademickie "Piątka" w Łodzi | 
+          &copy; 2013-{1900 + new Date().getYear()}{" "}Duszpasterswo Akademickie "Piątka" w Łodzi |
         Made with <Favorite className={classNames(classes.icon, classes.primaryColorText)} /> using Creative Tim and GatsbyJS
-          
-          {/* <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
-            className={aClasses}
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web. */}
         </div>
       </div>
     </footer>
