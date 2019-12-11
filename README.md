@@ -24,8 +24,8 @@ npm install -g gatsby-cli
 
 ### Technologies used :computer:
 This website is used using the following technologies:
-*HTML
-*CSS
-*JavaScript
-*React
-*GraphQL
+* HTML
+* CSS
+* JavaScript
+* React
+* GraphQL
