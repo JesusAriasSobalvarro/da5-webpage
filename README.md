@@ -28,4 +28,10 @@ This website is built using the following technologies:
 * CSS
 * JavaScript
 * React
+* GatsbyJs
 * GraphQL
+
+### Some Interesting Features :muscle: :exclamation:
+* This website contains a Gallery component that renders dinamically following the structure defined in the Galeria folder. 
+* GatsbyJs has a plugin designed for images that permits to load pictures in a blurred appearence until they the browser fully loads them. This website harnesses the power of this plugin and loads images in an elegant manner. To read more about this you can visit: https://www.gatsbyjs.org/packages/gatsby-image/
+
