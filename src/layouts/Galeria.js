@@ -50,7 +50,7 @@ class Galeria extends React.Component {
     var pic
 
     photos[folder].forEach(element => {
-      pic = require("../images/galeria/" + element.relativePath)
+      pic = require("../images/Galeria/" + element.relativePath)
       pics.push(pic)
     })
 
