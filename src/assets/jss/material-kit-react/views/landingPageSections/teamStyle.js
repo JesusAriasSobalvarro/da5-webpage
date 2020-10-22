@@ -41,6 +41,18 @@ const teamStyle = {
   },
   margin5: {
     margin: "5px"
+  },
+  boldText: {
+    marginBottom: '3px',
+    fontWeight: 'bold',
+    fontSize: '17px',
+    fontFamily:'Segoe UI',
+    color: '#333333'
+  },
+  lightText: {
+      marginBottom: '3px',
+      color:'#8a919a',
+      fontFamily:'Segoe UI'
   }
 };
 

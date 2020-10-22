@@ -10,8 +10,16 @@ const customClasses = {
     grayText: {
         color: "#3C4858"
     },
+    purpleSubtitle: {
+        color: "#9C27B0",
+        fontWeight: "600",
+        fontFamily: `"Roboto Slab", "Times New Roman", serif`,
+        textTransform: "uppercase",
+        fontSize: "0.9rem"
+    },
     fullHeight: {
-        height: "100%"
+        height: "250px",
+        backgroundColor:"#144962"
     },
     sliderImage: {
         objectFit:"cover", 
@@ -23,8 +31,8 @@ const customClasses = {
         top: "0",
         width: "100%",
         height: "100%",
-        color: "#FFFFFF",
-        backgroundColor: "rgba(0, 0, 0, 0.75)",
+        // color: "#FFFFFF",
+        // backgroundColor: "rgba(0, 0, 0, 0.75)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

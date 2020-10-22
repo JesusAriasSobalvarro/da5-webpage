@@ -60,5 +60,57 @@ module.exports = {
         path: `${__dirname}/src/pages/Home/`,
       },
     },
+    // {
+    //   resolve: 'gatsby-source-firestore',
+    //   options: {
+    //     credential: require("./da5-webpage-firebase-adminsdk-eslu8-d154eeed97.json"),
+    //     types: [
+    //       {
+    //         type: 'WeeklyEvent',
+    //         collection: 'weeklyPlan',
+    //         map: event => ({
+    //           day: event.day,
+    //           hour: event.hour,
+    //           name: event.name
+    //         }),
+    //       }
+ 
+          // ,
+          // {
+          //   type: 'Author',
+          //   collection: 'authors',
+          //   map: doc => ({
+          //     name: doc.name,
+          //     country: doc.country,
+          //     books___NODE: doc.books.map(book => book.id),
+          //   }),
+          // },
+        //],
+      //},
+    //}
+    {
+        resolve: 'gatsby-plugin-react-svg',
+        options: {
+          rule: {
+            include: /SVGs/
+          }
+        }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    }
   ],
 }
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})

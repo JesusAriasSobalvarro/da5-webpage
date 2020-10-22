@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.8;fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{opacity:0.8;fill:url(#SVGID_2_);}
+	.st3{fill:url(#SVGID_3_);}
+	.st4{fill:url(#SVGID_4_);}
+	.st5{fill:url(#SVGID_5_);}
+	.st6{fill:url(#SVGID_6_);}
+	.st7{fill:url(#SVGID_7_);}
+	.st8{fill:url(#SVGID_8_);}
+	.st9{opacity:0.8;fill:url(#SVGID_9_);}
+	.st10{opacity:0.8;fill:url(#SVGID_10_);}
+	.st11{opacity:0.8;fill:url(#SVGID_11_);}
+	.st12{opacity:0.8;fill:url(#SVGID_12_);}
+	.st13{opacity:0.8;fill:url(#SVGID_13_);}
+	.st14{opacity:0.8;fill:url(#SVGID_14_);}
+	.st15{opacity:0.8;fill:url(#SVGID_15_);}
+	.st16{opacity:0.8;fill:url(#SVGID_16_);}
+	.st17{opacity:0.8;fill:url(#SVGID_17_);}
+	.st18{opacity:0.8;fill:url(#SVGID_18_);}
+	.st19{opacity:0.8;fill:url(#SVGID_19_);}
+	.st20{opacity:0.8;fill:url(#SVGID_20_);}
+	.st21{opacity:0.8;fill:url(#SVGID_21_);}
+	.st22{opacity:0.8;fill:url(#SVGID_22_);}
+	.st23{opacity:0.8;fill:url(#SVGID_23_);}
+	.st24{opacity:0.8;fill:url(#SVGID_24_);}
+	.st25{opacity:0.8;fill:url(#SVGID_25_);}
+	.st26{opacity:0.8;fill:url(#SVGID_26_);}
+	.st27{opacity:0.8;fill:url(#SVGID_27_);}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="25" y1="200" x2="375" y2="200">
+		<stop  offset="0" style="stop-color:#F8B001"/>
+		<stop  offset="0.0177" style="stop-color:#F7AC02"/>
+		<stop  offset="0.2234" style="stop-color:#EF860F"/>
+		<stop  offset="0.4276" style="stop-color:#E96818"/>
+		<stop  offset="0.6273" style="stop-color:#E5521F"/>
+		<stop  offset="0.8206" style="stop-color:#E24524"/>
+		<stop  offset="1" style="stop-color:#E14125"/>
+	</linearGradient>
+	<circle class="st0" cx="200" cy="200" r="175"/>
+	<path class="st1" d="M117.63,278.29h-12.96V100.62h127.74c7.89,0,14.3,6.42,14.3,14.3v149.06c0,7.89-6.42,14.31-14.3,14.31H146.3
+		v20.2l-14.34-9.55l-14.32,9.55V278.29z M137.08,281.29v-2.98l-4.46-0.02L137.08,281.29z M227.3,269.09h5.12
+		c2.81,0,5.11-2.29,5.11-5.11v-40.73H227.3V269.09z M205.9,269.09h12.17V109.82H205.9V269.09z M113.9,269.09h82.79v-45.84H113.9
+		V269.09z M227.3,214.03h10.23v-49.11H227.3V214.03z M113.9,214.03h82.79v-49.11H113.9V214.03z M227.3,155.72h10.23v-40.79
+		c0-2.81-2.29-5.1-5.11-5.1h-5.12V155.72z M113.9,155.72h82.79v-45.9H113.9V155.72z"/>
+	<path class="st1" d="M277.75,297.73c-2.53,0-4.59-2.07-4.59-4.61v-5.25l-12.98-22.68V111.63c0-6.08,4.95-11.03,11.05-11.03h13.05
+		c6.08,0,11.03,4.95,11.03,11.03v153.55l-12.96,22.68v5.26C282.36,295.66,280.3,297.73,277.75,297.73z M269.41,259.36h16.72V145.45
+		h-16.72V259.36z M271.24,109.82c-1.01,0-1.83,0.81-1.83,1.81v11.66h16.72v-11.66c0-1-0.82-1.81-1.83-1.81H271.24z"/>
+</g>
+</svg>

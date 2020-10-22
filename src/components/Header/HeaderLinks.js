@@ -6,6 +6,9 @@ import IconButton from "@material-ui/core/IconButton";
 import { Link } from "gatsby";
 import window from 'global'
 
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -26,6 +29,8 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+  const { color }= props;
+  console.log(color)
   return (
     <List className={classes.list}>
 
@@ -74,7 +79,9 @@ export default function HeaderLinks(props) {
         <Link to="/sakramenty" className={classes.navLink}>Sakramenty</Link>
       </ListItem>
 
-
+      <ListItem className={classes.listItem}>
+        <Link to="/naszeinicjatywy" className={classes.navLink}>Nasze Inicjatywy</Link>
+      </ListItem>
 
 
       {/* <ListItem className={classes.listItem}>
@@ -99,40 +106,45 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem> */}
-      {/* <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
-          title="Follow us on facebook"
+          title="Śledź nas na acebooku"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+            href="https://www.facebook.com/da.piatka"
             target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fa fa-facebook-square"} />
           </Button>
         </Tooltip>
-      </ListItem> */}
-      {/* <ListItem className={classes.listItem}>
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
-          title="Follow us on instagram"
+          title="Obserwuj nas na Instagramie"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+            href="https://www.instagram.com/dapiatka/"
             target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fa fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem> */}
+      </ListItem>
     </List>
   );
 }
+
+HeaderLinks.propTypes = {
+  color: PropTypes.string
+};
