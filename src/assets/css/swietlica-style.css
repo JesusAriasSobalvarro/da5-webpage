@@ -23,7 +23,7 @@
     font-weight: 500;
 }
 
-p.strikearound {
+p.strikearoundSw {
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -31,7 +31,7 @@ p.strikearound {
     font-weight: bold;
     color: black;
 }
-p.strikearound:before, p.strikearound:after {
+p.strikearoundSw:before, p.strikearoundSw:after {
     position: absolute;
     top: 51%;
     overflow: hidden;
@@ -40,7 +40,7 @@ p.strikearound:before, p.strikearound:after {
     content: '\a0';
     background-color: #279396
 }
-p.strikearound:before {
+p.strikearoundSw:before {
     margin-left: -50%;
     text-align: right;
 }

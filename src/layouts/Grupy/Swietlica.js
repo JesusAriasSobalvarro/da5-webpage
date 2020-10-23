@@ -203,7 +203,7 @@ const OazaGroup = () => {
                       classes.description,
                       classes.grayText,
                       "body-text",
-                      "strikearound"
+                      "strikearoundSw"
                     )}
                   >
                     {" "}
