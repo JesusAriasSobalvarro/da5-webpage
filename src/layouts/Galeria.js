@@ -50,7 +50,7 @@ class Galeria extends React.Component {
     var pic
 
     photos[folder].forEach(element => {
-      pic = require("../images/Galeria/" + element.relativePath)
+      pic = require("./../images/" + element.relativePath)
       pics.push(pic)
     })
 
@@ -160,7 +160,7 @@ class Galeria extends React.Component {
                       }
                     }
 
-                    allFile(filter: { sourceInstanceName: { eq: "galeria" } }) {
+                    allFile(filter: {relativeDirectory: {regex: "/^Galeria/"}} ) {
                       distinct(field: relativeDirectory)
                       edges {
                         node {
@@ -192,7 +192,7 @@ class Galeria extends React.Component {
                                             ================================================================ */
                     var mapFolderAndYear = _.map(flattenedNodes, node => {
                       var relativePathSplit = node.relativePath.split("/")
-                      if (relativePathSplit.length === 3) {
+                      if (relativePathSplit.length) {
                         return {
                           ...node,
                           year: relativePathSplit[0],

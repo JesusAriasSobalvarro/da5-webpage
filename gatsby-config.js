@@ -42,13 +42,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `galeria`,
-        path: `${__dirname}/src/images/Galeria`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `plantygodnia`,
         path: `${__dirname}/src/pages/PlanTygodnia/`,
       },
