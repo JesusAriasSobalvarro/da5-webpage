@@ -18,8 +18,8 @@
     font-weight: bold;
 }
 
-.body-text-orange {
-    color: #E77542;
+.body-text-highlight {
+    color:#279396;
     font-weight: 500;
 }
 
@@ -38,7 +38,7 @@ p.strikearound:before, p.strikearound:after {
     width: 50%;
     height: 2px;
     content: '\a0';
-    background-color: #E77542;
+    background-color: #279396
 }
 p.strikearound:before {
     margin-left: -50%;
@@ -46,19 +46,18 @@ p.strikearound:before {
 }
 .icon-text-container {
     display: flex;
-    flex:1;
     /* background-color: blue; */
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: center;
 }
 .icon {
     height: 100px;
-    width: auto;
     margin: 0px 8px;
 }
 .padding-div {
     padding: 0px 25px;
 }
+
 
 @media only screen and (max-width: 480px) {
     .icon-text-container {

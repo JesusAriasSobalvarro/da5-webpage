@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 230 40" style="enable-background:new 0 0 230 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+	.st3{fill:none;}
+	.st4{fill:#FFFFFF;}
+	.st5{font-family:'SegoeUI-Bold';}
+	.st6{font-size:18px;}
+	.st7{fill:url(#SVGID_4_);}
+	.st8{fill:url(#SVGID_5_);}
+	.st9{fill:url(#SVGID_6_);}
+	.st10{fill:url(#SVGID_7_);}
+	.st11{fill:url(#SVGID_8_);}
+	.st12{fill:url(#SVGID_9_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="230" y2="20">
+	<stop  offset="0" style="stop-color:#92D2E7"/>
+	<stop  offset="0.0166" style="stop-color:#8ED0E5"/>
+	<stop  offset="0.2569" style="stop-color:#5CBBCB"/>
+	<stop  offset="0.4832" style="stop-color:#34ABB7"/>
+	<stop  offset="0.6892" style="stop-color:#179FA8"/>
+	<stop  offset="0.8682" style="stop-color:#06989F"/>
+	<stop  offset="1" style="stop-color:#00959C"/>
+</linearGradient>
+<rect class="st0" width="230" height="40"/>
+<rect x="0.77" y="12.23" class="st3" width="221.02" height="24.36"/>
+<text transform="matrix(1 0 0 1 41.4212 25.5582)" class="st4 st5 st6">Spotkania grupy</text>
+</svg>

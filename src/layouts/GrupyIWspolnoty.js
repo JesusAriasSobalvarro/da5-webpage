@@ -225,7 +225,7 @@ const GrupyIWspolnoty = () => {
             </div>
           </Link>
 
-          <Link to="/grupy/oaza" className={classes.navLink}>
+          <Link to="/grupy/swietlica-dla-niepelnosprawnych" className={classes.navLink}>
             <div
               style={{
                 display: "flex",
